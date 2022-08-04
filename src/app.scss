@@ -1,0 +1,14 @@
+.header {
+  height: 92px;
+  background-color: #1eb7ee;
+  box-shadow: 0 5px 10px rgb(37 40 41 / 30%);
+  &__logo {
+    height: 92px;
+    width: 184px;
+    background-image: url(./airport_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 80px;
+  }
+}
