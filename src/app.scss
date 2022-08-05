@@ -1,14 +1,25 @@
+@import './utils/variables.scss';
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header {
   height: 92px;
-  background-color: #1eb7ee;
+  width: 100vw;
+  min-width: 600px;
+  background-color: $blueColor;
   box-shadow: 0 5px 10px rgb(37 40 41 / 30%);
   &__logo {
-    height: 92px;
-    width: 184px;
+    height: 110px;
+    width: 180px;
     background-image: url(./airport_logo.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-left: 80px;
+    margin-top: -9px;
+    margin-left: 120px;
   }
 }

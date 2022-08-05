@@ -1,0 +1,83 @@
+@import '../../utils/variables.scss';
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__title {
+    font-size: 70px;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 40px 0 24px -18px;
+  }
+
+  &__form {
+    display: flex;
+    margin-left: -18px;
+  }  
+  
+  &__icon {
+    height: 80px;
+    width: 70px;
+    background-color: #ffffff;
+    background-image: url("./search_glass.png");
+    background-position: center;
+    background-size: 48px;
+    background-repeat: no-repeat;
+  }
+
+  &__input {
+    width: 470px;
+    height: 80px;
+    border: none;
+    font-size: 22px;
+    color: #000000;
+    opacity: 1;
+       
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-size: 25px;
+      letter-spacing: -0.02em;
+      color: #af9b9a;
+      opacity: 0.85;
+    }
+  }
+
+  &__btn {
+    width: 125px;
+    border: none;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: left;
+    padding-left: 20px;
+    background-color: $blueColor;
+    transition: border-top-right-radius 300ms;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover + div {
+      border-top-right-radius: 50%;
+      transition: border-top-right-radius 300ms;
+    }
+
+    &_decoration {
+      width: 75px;
+      border-top-right-radius: 100%;
+
+      &:hover {
+        border-top-right-radius: 50%;
+        transition: border-top-right-radius 300ms;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
