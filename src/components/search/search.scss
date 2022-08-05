@@ -1,4 +1,5 @@
 @import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
 
 .search {
   display: flex;
@@ -10,11 +11,25 @@
     font-weight: 300;
     text-transform: uppercase;
     margin: 40px 0 24px -18px;
+
+    @include onTablet {
+      width: 100vw;
+      min-width: $minWidth;
+      font-size: 35px;
+      margin-left: 5px;
+    }
   }
 
   &__form {
     display: flex;
     margin-left: -18px;
+
+    @include onTablet {
+      flex-direction: column;
+      width: 100vw;
+      min-width: $minWidth;
+      margin-left: 5px;
+    }
   }  
   
   &__icon {
@@ -25,15 +40,25 @@
     background-position: center;
     background-size: 48px;
     background-repeat: no-repeat;
+
+    @include onTablet {
+      width: 0;
+      height: 0;
+    }
   }
 
   &__input {
-    width: 470px;
+    width: 473px;
     height: 80px;
     border: none;
     font-size: 22px;
     color: #000000;
-    opacity: 1;
+    margin-left: -3px;
+
+    @include onTablet {
+      min-width: $minWidth;
+      width: 100vw;
+    }
        
     &:focus {
       outline: none;
@@ -41,9 +66,13 @@
 
     &::placeholder {
       font-size: 25px;
-      letter-spacing: -0.02em;
-      color: #af9b9a;
-      opacity: 0.85;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      color: #9b989a;
+
+      @include onTablet {
+        font-size: 22px;
+      }
     }
   }
 
@@ -59,6 +88,13 @@
     background-color: $blueColor;
     transition: border-top-right-radius 300ms;
 
+    @include onTablet {
+      width: 100vw;
+      min-width: 50px;
+      font-size: 22px;
+      height: 80px;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -72,6 +108,11 @@
       width: 75px;
       border-top-right-radius: 100%;
 
+      @include onTablet {
+        width: 0;
+        height: 0;
+      }
+
       &:hover {
         border-top-right-radius: 50%;
         transition: border-top-right-radius 300ms;
@@ -79,5 +120,4 @@
       }
     }
   }
-
 }
