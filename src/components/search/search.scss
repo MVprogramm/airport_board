@@ -17,6 +17,7 @@
       min-width: $minWidth;
       font-size: 35px;
       margin-left: 5px;
+      text-align: center;
     }
   }
 
@@ -58,6 +59,7 @@
     @include onTablet {
       min-width: $minWidth;
       width: 100vw;
+      height: 60px;
     }
        
     &:focus {
@@ -92,7 +94,8 @@
       width: 100vw;
       min-width: 50px;
       font-size: 22px;
-      height: 80px;
+      height: 60px;
+      text-align: center;
     }
 
     &:hover {
