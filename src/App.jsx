@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from './components/search/Search.jsx';
-// import Board from './components/board/Board.jsx';
+import Board from './components/board/Board.jsx';
 import './app.scss';
 
 const App = () => (
@@ -9,7 +9,7 @@ const App = () => (
       <div className="header__logo"></div>
     </header>
     <Search />
-    {/* <Board /> */}
+    <Board />
   </main>
 );
 

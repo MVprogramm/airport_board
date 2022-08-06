@@ -1,0 +1,14 @@
+.board__tab {
+  &_dep {
+    left: 0;
+  }
+}
+
+.board__title_dep {
+  left: 325px;
+}
+
+.board__icon_dep {
+  left: 255px;
+  transform: rotate(-35deg);
+}
