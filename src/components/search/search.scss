@@ -1,11 +1,11 @@
-@import '../../utils/variables.scss';
-@import '../../utils/mixins.scss';
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
 
 .search {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
 
   &__title {
     font-size: 70px;
@@ -32,8 +32,8 @@
       min-width: $minWidth;
       margin-left: 5px;
     }
-  }  
-  
+  }
+
   &__icon {
     height: 80px;
     width: 70px;
@@ -62,7 +62,7 @@
       width: 100vw;
       height: 60px;
     }
-       
+
     &:focus {
       outline: none;
     }

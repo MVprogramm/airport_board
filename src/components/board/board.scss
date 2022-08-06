@@ -1,4 +1,4 @@
-@import '../../utils/variables.scss';
+@import "../../utils/variables.scss";
 
 .board {
   display: flex;
@@ -7,14 +7,14 @@
 
   &__menu {
     position: relative;
-    height: 70px;
-    width: 1200px;
+    height: $borderMenuHeight;
+    width: 1130px;
   }
 
   &__status {
     position: relative;
-    height: 70px;
-    width: 600px;
+    height: $borderMenuHeight;
+    width: 470px;
   }
 
   &__header {
@@ -26,14 +26,14 @@
     position: absolute;
     display: flex;
     justify-content: space-between;
-    height: 70px;
-    width: 650px;
+    height: $borderMenuHeight;
+    width: 600px;
   }
 
   &__decoration {
-    height: 70px;
+    height: $borderMenuHeight;
     width: 70px;
-  
+
     &_left {
       border-top-left-radius: 80%;
     }
@@ -45,15 +45,15 @@
 
   &__title {
     position: absolute;
-    top: 20px;
+    top: 16px;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: uppercase;
   }
 
   &__icon {
     position: absolute;
-    top: 10px;
+    top: 5px;
     height: 55px;
     width: 55px;
     border-radius: 50%;
@@ -75,7 +75,7 @@
 
 .show {
   background-color: #ffffff;
-  
+
   &_cross {
     z-index: 1;
   }
@@ -105,5 +105,3 @@
 .hide-icon {
   visibility: hidden;
 }
-
-
