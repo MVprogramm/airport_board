@@ -97,6 +97,10 @@
 
     &:hover {
       cursor: pointer;
+
+      @include onTablet {
+        opacity: 0.7;
+      }
     }
 
     &:hover + div {

@@ -26,8 +26,13 @@
   }
 
   &__decor {
+    display: block;
     height: $boardMenuHeight;
     width: 70px;
+
+    @include onTablet {
+      display: none;
+    }
 
     &_left {
       border-top-left-radius: 80%;
@@ -59,15 +64,21 @@
     display: flex;
     align-items: center;
     height: $boardMenuHeight;
-    width: 430px;
-    
+    width: 480px;
+    padding: 0 30px 0 40px;
+
     &_dep {
       justify-content: end;
     }
 
     &_arr {
       justify-content: start;
-      padding-left: 50px;
+
+      &:hover {
+        @include onTablet {
+          opacity: 0.7;
+        }
+      }
 
       &:hover + div {
         border-top-right-radius: 50%;
