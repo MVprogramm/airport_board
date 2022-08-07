@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin onLaptop {
+  @media (max-width: 1130px) {
+    @content;
+  }
+}

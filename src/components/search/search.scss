@@ -15,7 +15,6 @@
 
     @include onTablet {
       width: 100vw;
-      min-width: $minWidth;
       font-size: 35px;
       margin-left: 5px;
       text-align: center;
@@ -29,7 +28,6 @@
     @include onTablet {
       flex-direction: column;
       width: 100vw;
-      min-width: $minWidth;
       margin-left: 5px;
     }
   }
@@ -58,7 +56,6 @@
     margin-left: -3px;
 
     @include onTablet {
-      min-width: $minWidth;
       width: 100vw;
       height: 60px;
     }
@@ -93,7 +90,6 @@
 
     @include onTablet {
       width: 100vw;
-      min-width: 50px;
       font-size: 22px;
       height: 60px;
       text-align: center;

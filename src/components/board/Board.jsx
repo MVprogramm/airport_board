@@ -1,16 +1,14 @@
 import React from 'react';
-import Arrivals from '../arrivals/Arrivals.jsx';
-import Departures from '../departures/Departures.jsx';
+import Menu from '../menu/Menu.jsx';
+// import Arrivals from '../arrivals/Arrivals.jsx';
+// import Departures from '../departures/Departures.jsx';
 import Date from '../date/Date.jsx';
 import './board.scss';
 
 const Board = () => (
   <section className="board">
-    <div className="board__menu">
-      <Departures />
-      <Arrivals />
-    </div>
-    {/*
+      <Menu />
+  {/*
     <div className="board__date">
       <Date />
     </div>

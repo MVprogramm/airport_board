@@ -1,0 +1,118 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.board {
+  &__menu {
+    display: flex;
+    justify-content: center;
+    height: $boardMenuHeight;
+    width: 100vw;
+    max-width: 1130px;
+  }
+}
+
+.menu {
+  border: none;
+
+  &__bground {
+    &_white {
+      background-color: #ffffff;
+    }
+
+    &_blue {
+      cursor: pointer;
+      background-color: $blueColor;
+    }
+  }
+
+  &__decor {
+    height: $boardMenuHeight;
+    width: 70px;
+
+    &_left {
+      border-top-left-radius: 80%;
+    }
+
+    &_center {
+      position: relative;
+    }
+
+    &_right {
+      transition: border-top-right-radius 300ms;
+      border-top-right-radius: 80%;
+    }
+
+    &_cross {
+      position: absolute;
+    }
+
+    &_show {
+      display: block;
+    }
+
+    &_hide {
+      display: none;
+    }
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    height: $boardMenuHeight;
+    width: 430px;
+    
+    &_dep {
+      justify-content: end;
+    }
+
+    &_arr {
+      justify-content: start;
+      padding-left: 50px;
+
+      &:hover + div {
+        border-top-right-radius: 50%;
+        transition: border-top-right-radius 300ms;
+      }
+    }
+  }
+
+  &__icon {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: 55px;
+    background-repeat: no-repeat;
+    margin-right: 15px;
+
+    &_dep {
+      transform: rotate(-35deg);
+    }
+
+    &_arr {
+      transform: rotate(35deg);
+    }
+
+    &_white {
+      background-image: url("./white_plane.png");
+    }
+
+    &_blue {
+      background-image: url("./blue_plane.png");
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &_white {
+      color: #ffffff;
+    }
+
+    &_blue {
+      color: $blueColor;
+    }
+  }
+}
