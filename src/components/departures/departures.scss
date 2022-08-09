@@ -1,0 +1,48 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.menu {
+  &__bground {
+    &_blue-dep {
+      cursor: pointer;
+      background-color: $blueColor;
+
+      &:hover {
+        @include onTablet {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  &__decor {
+    &_left-blue-dep {
+      background-color: $blueColor;
+      cursor: pointer;
+      transition: border-top-left-radius 300ms;
+      border-top-left-radius: 80%;
+    }
+
+    &_left-white-dep {
+      background-color: #ffffff;
+      border-top-left-radius: 80%;
+    }
+  }
+
+  &__field {
+    &_dep {
+      justify-content: end;
+    }
+  }
+
+  &__icon {
+    &_dep-white {
+      background-image: url("../white_plane.png");
+    }
+
+    &_dep-blue {
+      transform: rotate(-35deg);
+      background-image: url("../blue_plane.png");
+    }
+  }
+}

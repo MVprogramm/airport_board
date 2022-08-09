@@ -1,3 +1,5 @@
+@import "../../utils/mixins.scss";
+
 .board__flights {
   width: 100vw;
   max-width: 1120px;
@@ -11,4 +13,8 @@
   color: #95989a;
   border: none;
   padding-bottom: 10px;
+
+  @include onTablet {
+    font-size: 12px;
+  }
 }
