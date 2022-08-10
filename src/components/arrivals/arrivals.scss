@@ -1,6 +1,15 @@
 @import "../../utils/variables.scss";
 @import "../../utils/mixins.scss";
 
+.arr {
+  display: flex;
+
+  &:hover > div {
+    transition: border-top-right-radius 300ms;
+    border-top-right-radius: 50%;
+  }
+}
+
 .menu {
   &__bground {
     &_blue-arr {

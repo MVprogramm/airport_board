@@ -1,6 +1,20 @@
 @import "../../utils/variables.scss";
 @import "../../utils/mixins.scss";
 
+.dep {
+  display: flex;
+
+  &:hover > div {
+    transition: border-top-left-radius 300ms;
+    border-top-left-radius: 50%;
+  }
+
+  &:focus > div {
+    transition: border-top-left-radius 300ms;
+    border-top-left-radius: 80%;
+  }
+}
+
 .menu {
   &__bground {
     &_blue-dep {

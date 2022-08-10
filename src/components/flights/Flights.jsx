@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "rc-table";
-import { columns } from "../../utils/data.js";
+import { columns } from "../../utils/dataStore.js";
 import "./flights.scss";
 
 const Flights = () => (

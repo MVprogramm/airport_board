@@ -7,20 +7,28 @@ import {
 import Menu from "../menu/Menu.jsx";
 import DeparturesList from "../departures/DeparturesList.jsx";
 import ArrivalsList from "../arrivals/ArrivalsList.jsx";
-import Date from "../date/Date.jsx";
+import Day from "../day/Day.jsx";
 import "./board.scss";
 
 const Board = () => {
   const [status, setStatus] = useState("dep");
+  const [flyDay, setFlyDay] = useState(new Date());
   
   return (
     <section className="board">
       <Router>
         <Menu status={status} setStatus={setStatus}/>
-        <Date />
+        <Day flyDay={flyDay} setFlyDay={setFlyDay}/>
         <Switch>
-          <Route path="/departures" component={DeparturesList} />
-          <Route path="/arrivals" component={ArrivalsList} /> 
+          <Route path="/departures">
+            <DeparturesList flyDay={flyDay} />
+          </Route>
+          <Route path="/arrivals">
+            <ArrivalsList flyDay={flyDay} />
+          </Route> 
+          <Route path="/">
+            <DeparturesList flyDay={flyDay} />
+          </Route>
         </Switch>
       </Router>
     </section>
