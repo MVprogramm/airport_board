@@ -4,13 +4,15 @@ import Board from './components/board/Board.jsx';
 import './app.scss';
 
 const App = () => (
-  <main>
+  <>
     <header className="header">
       <div className="header__logo"></div>
     </header>
-    <Search />
-    <Board />
-  </main>
+    <main>
+      <Search />
+      <Board />
+    </main>
+  </>
 );
 
 export default App;
