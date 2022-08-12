@@ -3,8 +3,15 @@ const getTwoNumbersString = (num) => {
   return twoNumbersString;
 };
 
+export const isDate = (date) => {
+  const time = new Date(date).getTime();
+  return typeof time === 'number' && isFinite(time);
+}
+
 export const getFormattedDate = (date) => 
   `${getTwoNumbersString(date.getDate())}/${getTwoNumbersString((+date.getMonth()) + 1) + ''}`;
+export const getFormattedTime = (time) =>
+  `${time.getHours()}:${getTwoNumbersString((time.getMinutes()))}`;
 
 export const getTodaysDate = () => new Date();
 export const getToday = () => getFormattedDate(getTodaysDate());

@@ -1,3 +1,4 @@
+@import "../../utils/variables.scss";
 @import "../../utils/mixins.scss";
 
 .board__flights {
@@ -11,10 +12,126 @@
   font-size: 16px;
   font-weight: 400;
   color: #95989a;
-  border: none;
   padding-bottom: 10px;
 
   @include onTablet {
     display: none;
   }
+
+  &:nth-child(1) {
+    text-align: center;
+  }
+
+  &:nth-child(n + 2) {
+    padding-left: 12px;
+    text-align: left;
+  }
 }
+
+.rc-table-tbody > tr:nth-child(odd) {
+  background-color: rgba(0, 102, 135, 0.1);
+}
+
+.flight {
+  display: flex;
+  align-items: center;
+  height: $flightTableHeight;
+  
+  &__terminal {
+    justify-content: center;
+    width: 100%;
+    max-width: 108px;
+
+    @include onTablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 35px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    &_a {
+      color: #63c745;
+      border: 1px solid #63c745;
+    }
+
+    &_b {
+      color: #ee361e;
+      border: 1px solid #ee361e;
+    }
+
+    &_c {
+      color: #a30da3;
+      border: 1px solid #a30da3;
+    }
+
+    &_d {
+      color: #1eb7ee;
+      border: 1px solid #1eb7ee;
+    }
+  }
+
+  &__logo {
+    width: 130px;
+    height: 50px;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__text {
+    justify-content: start;
+    color: #212529;
+
+    &_localTime {
+      width: 100%;
+      max-width: 120px;
+      padding-left: 12px;
+    }
+    
+    &_destination {
+      width: 100%;
+      max-width: 191px;
+      padding-left: 12px;
+    }
+
+    &_status {
+      width: 100%;
+      max-width: 200px;
+      padding-left: 12px;
+    }
+
+    &_airline {
+      width: 100%;
+      max-width: 204px;
+    }
+
+    &_flight {
+      width: 100%;
+      max-width: 300x;
+      padding-left: 12px;
+    }
+  }
+  &__airline {
+    padding-left: 12px;
+  }
+}
+.col {
+  width: 50vw;
+  padding-left: 10%;
+}
+
+
+
+
+
+
+
