@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Table from "rc-table";
 import Spin from "../spin/Spin.jsx";
+import No from "../no/No.jsx";
 import getColumns from "../../utils/rcTable/getColumns.js";
 import getTerminal from "../../utils/rcTable/getTerminals.jsx";
 import getLocalTime from "../../utils/rcTable/getLocalTime.jsx";
@@ -10,7 +11,7 @@ import getAirline from "../../utils/rcTable/getAirline.jsx";
 import getFlight from "../../utils/rcTable/getFlight.jsx";
 import "./flights.scss";
 
-const Flights = ({data, spin}) => {
+const Flights = ({data, spin, resolve, war}) => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   
   useEffect(() => {
@@ -21,8 +22,9 @@ const Flights = ({data, spin}) => {
 
     return window.removeEventListener('innerWidth', handleInnerWidth);
   });
-
-  if (data.length === 0) return <Spin spin={spin} />;
+ 
+ if (resolve !== 200) return <Spin spin={spin} />;
+ if (data.length === 0) return <No />;
 
   const flightsList = data
     .map(fly => {

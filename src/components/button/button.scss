@@ -1,0 +1,48 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.date {
+  &__setter {
+    &_btn {
+      width: 100px;
+      border-bottom: 3px solid #d0d0d0;
+      cursor: pointer;
+
+      &:hover {
+        border-bottom-color: $blueColor;
+      }
+
+      &:hover > div {
+        color: $blueColor;
+        font-weight: 700;
+      }
+
+      &:hover > div + div > span {
+        color: $blueColor;
+      }
+    }
+  }
+
+  &__output {
+    &_btn {
+      width: 100%;
+      height: 18px;
+      text-align: center;
+      color: #b8b9b9;
+    }
+  }
+
+  &__btn {
+    &_txt {
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #b8b9b9;
+
+      @include onTablet {
+        font-size: 12px;
+      }
+    }
+  }
+}

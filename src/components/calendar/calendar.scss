@@ -1,0 +1,46 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.date {
+  &__input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__setter {
+    &_calendar {
+      width: 80px;
+      margin-right: 10px;
+
+      @include onTablet {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__output {
+    &_calendar {
+      font-weight: 700;
+      color: $blueColor;
+    }
+  }
+
+  &__btn {
+    &_img {
+      display: block;
+      height: 40px;
+      width: 40px;
+      background-image: url("./date.png");
+      background-position: center;
+      background-size: 40px;
+      background-repeat: no-repeat;
+      transition: border-radius 300ms;
+      border-radius: 0;
+
+      &:hover {
+        border-radius: 25%;
+        transition: border-radius 300ms;
+      }
+    }
+  }
+}

@@ -1,13 +1,15 @@
 import React from "react";
-
+import { useSelector } from 'react-redux';
 import ArrivalsMenu from "../arrivals/ArrivalsMenu.jsx";
 import DeparturesMenu from "../departures/DeparturesMenu.jsx";
 import "./menu.scss";
 
-const Menu = ({ status, setStatus }) => {
+const Menu = () => {
+  const status = useSelector((state) => state.menu.status);
+  
   return (
     <div className="board__menu">
-      <DeparturesMenu status={status} setStatus={setStatus}/>
+      <DeparturesMenu />
       {
         status === "dep" && (
           <div className="menu__decor menu__decor_center menu__bground_blue">
@@ -22,7 +24,7 @@ const Menu = ({ status, setStatus }) => {
           </div>
         )
       }
-      <ArrivalsMenu status={status} setStatus={setStatus} />
+      <ArrivalsMenu />
     </div>
   )
 };
