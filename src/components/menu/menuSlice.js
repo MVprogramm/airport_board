@@ -1,18 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  status: "dep",
-}
+  status: sessionStorage.getItem("status")
+    ? sessionStorage.getItem("status")
+    : "dep",
+};
 
 export const menuSlice = createSlice({
-  name: 'menu',
+  name: "menu",
   initialState,
   reducers: {
     setStatus: (state, action) => {
-      state.status = action.payload
+      state.status = action.payload;
+      sessionStorage.setItem("status", action.payload);
     },
   },
-})
+});
 
 export const { setStatus } = menuSlice.actions;
 export default menuSlice.reducer;

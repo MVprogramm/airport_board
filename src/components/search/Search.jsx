@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setFlight } from './searchSlice.js';
-import './search.scss';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setFlight } from "./searchSlice.js";
+import "./search.scss";
 
 const Search = () => {
-  const [searchFlight, setSearchFlight] = useState("");
+  const [searchFlight, setSearchFlight] = useState(
+    sessionStorage.getItem("flight")
+  );
   const dispatch = useDispatch();
 
   const onSubmit = (event) => {
     event.preventDefault();
     dispatch(setFlight(searchFlight));
-  }
+  };
 
   return (
     <section className="search">
       <h1 className="search__title">Search flight</h1>
       <form className="search__form" onSubmit={onSubmit}>
         <div className="search__icon"></div>
-        <input 
-          className="search__input" 
-          type="text" 
+        <input
+          className="search__input"
+          type="text"
           placeholder="Flight #"
           value={searchFlight}
           onChange={(e) => setSearchFlight(e.target.value)}
@@ -29,6 +31,6 @@ const Search = () => {
       </form>
     </section>
   );
-}
+};
 
 export default Search;

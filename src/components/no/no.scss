@@ -3,13 +3,14 @@
 .no {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-    
+
   &__war {
     height: 900px;
     max-width: 1200px;
     width: 100%;
-    background-image: url("./rvkin.jpg");
+    background-image: url("./rvkin.png");
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -19,13 +20,14 @@
     }
   }
 
-  
-
   &__flight {
+    text-align: center;
+    background-color: #fff;
     color: #2f2f2f;
     font-size: 30px;
+    font-weight: 700;
+    line-height: 300px;
+    height: 300px;
+    width: 100%;
   }
 }
-
-
-

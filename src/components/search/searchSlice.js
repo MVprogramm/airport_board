@@ -1,18 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  flight: "",
-}
+  flight: sessionStorage.getItem("flight")
+    ? sessionStorage.getItem("flight")
+    : "",
+};
 
 export const searchSlice = createSlice({
-  name: 'search',
+  name: "search",
   initialState,
   reducers: {
     setFlight: (state, action) => {
-      state.flight = action.payload
+      state.flight = action.payload;
+      sessionStorage.setItem("flight", action.payload);
     },
   },
-})
+});
 
 export const { setFlight } = searchSlice.actions;
 export default searchSlice.reducer;

@@ -11,62 +11,63 @@ import getAirline from "../../utils/rcTable/getAirline.jsx";
 import getFlight from "../../utils/rcTable/getFlight.jsx";
 import "./flights.scss";
 
-const Flights = ({data, spin, resolve, war}) => {
+const Flights = ({ data, spin, resolve }) => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-  
+
   useEffect(() => {
     const handleInnerWidth = () => {
       setInnerWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', handleInnerWidth);
+    };
+    window.addEventListener("resize", handleInnerWidth);
 
-    return window.removeEventListener('innerWidth', handleInnerWidth);
+    return window.removeEventListener("innerWidth", handleInnerWidth);
   });
- 
- if (resolve !== 200) return <Spin spin={spin} />;
- if (data.length === 0) return <No />;
 
-  const flightsList = data
-    .map(fly => {
-      let logo = fly.logo;
-      if (logo === undefined) {
-        const airline = fly.airline.en.name;
-        logo = data.find(fly => fly.airline.en.name === airline).logo;
-      }
-      if (fly.airline.en.name === "LOT") logo = "media/airline/files/5b796cfc8c435285152565.png";
-      if (fly.airline.en.name === "Motor Sich") logo = "media/airline/files/5b556c813c99a330362586.png";
-      let output = {
-        terminal: getTerminal(fly),
-        localTime: getLocalTime(fly, spin),
-        destination: getDestination(fly, spin),
-        status: getStatus(fly, spin),
-        airline: getAirline(fly, logo),
-        flight: getFlight(fly),
+  if (resolve !== 200) return <Spin spin={spin} />;
+  if (data.length === 0) return <No />;
+
+  const flightsList = data.map((fly) => {
+    let logo = fly.logo;
+    if (logo === undefined) {
+      const airline = fly.airline.en.name;
+      logo = data.find((fly) => fly.airline.en.name === airline).logo;
+    }
+    if (fly.airline.en.name === "LOT")
+      logo = "media/airline/files/5b796cfc8c435285152565.png";
+    if (fly.airline.en.name === "Motor Sich")
+      logo = "media/airline/files/5b556c813c99a330362586.png";
+    let output = {
+      terminal: getTerminal(fly),
+      localTime: getLocalTime(fly, spin),
+      destination: getDestination(fly, spin),
+      status: getStatus(fly, spin),
+      airline: getAirline(fly, logo),
+      flight: getFlight(fly),
+      key: fly.ID,
+    };
+
+    if (innerWidth < 780) {
+      output = {
+        col_1: (
+          <div className="col">
+            {getTerminal(fly)}
+            {getLocalTime(fly, spin)}
+            {getFlight(fly)}
+          </div>
+        ),
+        col_2: (
+          <div className="col">
+            {getDestination(fly, spin)}
+            {getStatus(fly, spin)}
+            {getAirline(fly, logo)}
+          </div>
+        ),
         key: fly.ID,
       };
+    }
 
-      if (innerWidth < 780) {
-        output = {
-          col_1: (
-            <div className="col">
-              { getTerminal(fly) }
-              { getLocalTime(fly, spin) }
-              { getFlight(fly) }
-            </div>
-          ),
-          col_2: (
-            <div className="col">
-              { getDestination(fly, spin) }
-              { getStatus(fly, spin) }
-              { getAirline(fly, logo) }
-            </div>
-          ),
-          key: fly.ID,
-        }
-      }
-
-      return output;
-    });
+    return output;
+  });
 
   const columns = innerWidth >= 780 ? getColumns() : getColumns(true);
 
