@@ -2,9 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getFormattedFilter } from "../../utils/dateUtils.js";
 
 const initialState = {
-  flyDay: sessionStorage.getItem("day")
-    ? sessionStorage.getItem("day")
-    : getFormattedFilter(new Date())[0],
+  flyDay:
+    sessionStorage.getItem("day") === null
+      ? getFormattedFilter(new Date())[0]
+      : sessionStorage.getItem("day"),
 };
 
 export const daySlice = createSlice({

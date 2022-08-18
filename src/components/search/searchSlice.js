@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  flight: sessionStorage.getItem("flight")
-    ? sessionStorage.getItem("flight")
-    : "",
+  flight:
+    sessionStorage.getItem("flight") === null
+      ? ""
+      : sessionStorage.getItem("flight"),
 };
 
 export const searchSlice = createSlice({

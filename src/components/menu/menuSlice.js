@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  status: sessionStorage.getItem("status")
-    ? sessionStorage.getItem("status")
-    : "dep",
+  status:
+    sessionStorage.getItem("status") === null
+      ? "dep"
+      : sessionStorage.getItem("status"),
 };
 
 export const menuSlice = createSlice({

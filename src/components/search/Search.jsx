@@ -4,9 +4,12 @@ import { setFlight } from "./searchSlice.js";
 import "./search.scss";
 
 const Search = () => {
-  const [searchFlight, setSearchFlight] = useState(
-    sessionStorage.getItem("flight")
-  );
+  const initialState =
+    sessionStorage.getItem("flight") === null
+      ? ""
+      : sessionStorage.getItem("flight");
+
+  const [searchFlight, setSearchFlight] = useState(initialState);
   const dispatch = useDispatch();
 
   const onSubmit = (event) => {
