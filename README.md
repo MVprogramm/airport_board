@@ -9,3 +9,6 @@ js, react, @reduxjs/toolkit
 rc-table
 
 api sikorsky airport kyiv
+
+npm start - development
+npm run build - production
