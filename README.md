@@ -5,11 +5,11 @@ gromcode/re(dux)act
 https://my-airport-board.netlify.app
 
 stack:
-* 1. html
-* 2. sass, css
-* 3. js, react
-* 4. @reduxjs/toolkit, rtk query
-* 5. rc-table
+* html
+* sass, css
+* js, react
+* @reduxjs/toolkit, rtk query
+* rc-table
 
 api sikorsky airport kyiv
 
