@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setFlight } from "./searchSlice.js";
+import { setFlight } from "../../store/searchSlice.js";
 import "./search.scss";
 
 const Search = () => {

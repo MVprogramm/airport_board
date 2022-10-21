@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Table from "rc-table";
 import Spin from "../spin/Spin.jsx";
 import No from "../no/No.jsx";
-import getColumns from "../../utils/rcTable/getColumns.js";
+import getColumns from "../../utils/rcTable/getColumns.jsx";
 import getTerminal from "../../utils/rcTable/getTerminals.jsx";
 import getLocalTime from "../../utils/rcTable/getLocalTime.jsx";
 import getDestination from "../../utils/rcTable/getDestination.jsx";
@@ -11,8 +11,9 @@ import getAirline from "../../utils/rcTable/getAirline.jsx";
 import getFlight from "../../utils/rcTable/getFlight.jsx";
 import "./flights.scss";
 
-const Flights = ({ data, spin, resolve }) => {
+const Flights = ({ data, spin, is }) => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const { isError, isLoading, isFetching } = is;
 
   useEffect(() => {
     const handleInnerWidth = () => {
@@ -23,7 +24,8 @@ const Flights = ({ data, spin, resolve }) => {
     return window.removeEventListener("innerWidth", handleInnerWidth);
   });
 
-  if (resolve !== 200) return <Spin spin={spin} />;
+  if (isError) return <div>An error has occurred!</div>;
+  if (isLoading || isFetching || data === null) return <Spin spin={spin} />;
   if (data.length === 0) return <No />;
 
   const flightsList = data.map((fly) => {

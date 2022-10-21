@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getFormattedFilter } from "../../utils/dateUtils.js";
+import { getFormattedFilter } from "../utils/dateUtils.js";
 
 const initialState = {
   flyDay:
