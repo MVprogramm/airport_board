@@ -12,3 +12,5 @@ api sikorsky airport kyiv
 
 npm start - development
 npm run build - production
+
+author Michael Valiahmetov
