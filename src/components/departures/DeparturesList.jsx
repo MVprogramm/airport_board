@@ -33,7 +33,7 @@ const DeparturesList = () => {
           : result
       );
     }
-  }, [currentData]);
+  }, [currentData, flight]);
 
   return <Flights data={departures} spin="dep" is={is} />;
 };

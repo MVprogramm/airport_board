@@ -9,6 +9,7 @@ import { useGetFlightsQuery } from "../../store/flights.api";
 const ArrivalsList = () => {
   const flyDay = useSelector((state) => state.day.flyDay);
   const flight = useSelector((state) => state.search.flight);
+
   const dispatch = useDispatch();
   const [arrivals, setArrivals] = useState(null);
 
